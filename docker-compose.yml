@@ -1,0 +1,28 @@
+services:
+  hr-nexus:
+    build: .
+    container_name: hr-nexus
+    environment:
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      # Optional — for real email sending (Gmail App Password)
+      - SENDER_EMAIL=${SENDER_EMAIL:-}
+      - SENDER_PASSWORD=${SENDER_PASSWORD:-}
+      - HR_EMAIL=${HR_EMAIL:-}
+      - HR_NAME=${HR_NAME:-HR Manager}
+      # Optional — for Google Calendar integration
+      - GOOGLE_CALENDAR_ID=${GOOGLE_CALENDAR_ID:-}
+    stdin_open: true
+    ports:
+      - "5000:5000"
+    tty: true
+    networks:
+      - agents-net
+    volumes:
+      - hr_nexus_data:/app/data
+
+networks:
+  agents-net:
+    external: true
+
+volumes:
+  hr_nexus_data:

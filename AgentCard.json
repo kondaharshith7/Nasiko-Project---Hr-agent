@@ -1,0 +1,83 @@
+{
+    "protocolVersion": "0.2.9",
+    "name": "HR Nexus",
+    "description": "Unified AI-powered HR agent combining Leave Management, HR Analytics, JD Generation, and End-to-End Recruitment Screening into a single intelligent assistant. Manage employee leaves, attendance, hiring pipelines, job descriptions, salary benchmarks, and team analytics — all through natural conversation.",
+    "url": "http://localhost:5000/",
+    "preferredTransport": "JSONRPC",
+    "provider": {
+        "organization": "HR Nexus Team",
+        "url": "https://github.com/your-org/hr-nexus"
+    },
+    "iconUrl": "http://localhost:5000/icon.png",
+    "version": "1.0.0",
+    "documentationUrl": "http://localhost:5000/docs",
+    "capabilities": {
+        "streaming": false,
+        "pushNotifications": false,
+        "stateTransitionHistory": true,
+        "chat_agent": true
+    },
+    "securitySchemes": {},
+    "security": [],
+    "defaultInputModes": ["text/plain"],
+    "defaultOutputModes": ["text/plain"],
+    "skills": [
+        {
+            "id": "leave_management",
+            "name": "Leave Management",
+            "description": "Check balances, apply for leave, track approval, detect absenteeism patterns",
+            "examples": [
+                "Check leave balance for Anjali Singh",
+                "Apply 3 days annual leave for Rahul from Dec 10-12",
+                "Who is on leave today?",
+                "Flag absenteeism risks in Engineering"
+            ]
+        },
+        {
+            "id": "attendance",
+            "name": "Attendance Tracking",
+            "description": "Mark attendance, get team availability, generate monthly reports",
+            "examples": [
+                "Mark Priya Sharma present today",
+                "Show team availability for Engineering on 2025-03-15",
+                "Generate attendance report for December"
+            ]
+        },
+        {
+            "id": "hr_data",
+            "name": "HR Analytics & Data",
+            "description": "Employee directory, salary details, departmental headcount, HR dashboard",
+            "examples": [
+                "Show all Engineering employees",
+                "What is the payroll for Finance department?",
+                "Give me a full HR summary dashboard",
+                "Show salary of Anjali Singh"
+            ]
+        },
+        {
+            "id": "jd_generator",
+            "name": "Job Description Generator",
+            "description": "Write complete JDs for any role, benchmark salaries, format for job platforms",
+            "examples": [
+                "Write a JD for a Senior Python Developer, remote, full-time",
+                "Generate a JD for ML intern, 3-month duration, Bangalore",
+                "Format this JD for LinkedIn",
+                "What salary should we offer a mid-level Data Scientist?"
+            ]
+        },
+        {
+            "id": "recruitment",
+            "name": "Recruitment & Screening",
+            "description": "Score resumes, shortlist candidates, schedule interviews, send offer letters",
+            "examples": [
+                "Show shortlisted candidates for FT-001",
+                "Score and screen all candidates for INT-001",
+                "Schedule interview for CAND-005 on March 20",
+                "Send offer letter to CAND-008 with salary 40L",
+                "Show the recruitment dashboard"
+            ]
+        }
+    ],
+    "supportsAuthenticatedExtendedCard": false,
+    "signatures": []
+}
